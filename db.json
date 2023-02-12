@@ -3,7 +3,22 @@
     {
       "id": 1,
       "title": "Learn React Query",
-      "completed": true
+      "completed": false
+    },
+    {
+      "title": "React 18",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "title": "NextJS",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "title": "Vue",
+      "completed": false,
+      "id": 4
     }
   ]
 }

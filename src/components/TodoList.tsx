@@ -1,10 +1,14 @@
 import { List, Spinner } from '@chakra-ui/react';
-import { Todo } from '../types/todo';
+import { useTodosQuery } from '../hooks/useTodosQuery';
+import { TodoState } from '../types/todo';
 import { TodoItem } from './TodoItem';
 
-const TodoList = () => {
-  const isLoading = true;
-  const data: Todo[] = [];
+type TodoListProps = {
+  state: TodoState;
+};
+
+const TodoList = ({ state }: TodoListProps) => {
+  const { data, isLoading, isSuccess } = useTodosQuery(state);
 
   if (isLoading)
     return (
@@ -19,9 +23,7 @@ const TodoList = () => {
 
   return (
     <List>
-      {data.map((todo) => (
-        <TodoItem key={todo.id} {...todo} />
-      ))}
+      {isSuccess && data.map((todo) => <TodoItem key={todo.id} {...todo} />)}
     </List>
   );
 };

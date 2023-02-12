@@ -29,7 +29,7 @@ const TodoViewer = () => {
         </Button>
       </ButtonGroup>
 
-      <TodoList />
+      <TodoList state={view} />
     </Stack>
   );
 };
